@@ -1,0 +1,81 @@
+@import "./normalize.css";
+
+:root {
+  --color-text: #333333;
+  --color-menu-text: #949494;
+  --color-high-text: #dd001b;
+  --color-tint: #dd001b;
+  --color-menu: #ea3f2d;
+  --color-background: #ffffff;
+  --font-size: 16px;
+  --line-height: 1.5;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--color-background);
+  color: var(--color-text);
+  width: 100vw;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+img,
+video {
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+input[type="text"],
+button {
+  outline: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.clear-fix::after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix {
+  zoom: 1;
+}
+
+.arrow-right {
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+  width: 9px;
+  height: 9px;
+  background-color: transparent;
+  transform: rotate(135deg);
+  display: inline-block;
+  margin-left: .1rem;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

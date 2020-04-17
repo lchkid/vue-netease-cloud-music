@@ -9,6 +9,7 @@
 ### 关于项目
 
 #### 首页 (/home)
+<img src="https://raw.githubusercontent.com/lchkid/vue-netease-cloud-music/master/screenshots/home.gif" style="zoom:50%;" />
 
 ##### 记录
 
@@ -39,6 +40,7 @@
 
 
 #### 视频 (/video)
+<img src="https://raw.githubusercontent.com/lchkid/vue-netease-cloud-music/master/screenshots/video.gif" style="zoom:50%;" />
 
 ##### 记录
 
@@ -58,6 +60,7 @@
 
 
 #### 歌单  (/playlist)
+<img src="https://raw.githubusercontent.com/lchkid/vue-netease-cloud-music/master/screenshots/playlist.gif" style="zoom:50%;" />
 
 ##### 记录
 
@@ -75,6 +78,7 @@
 
 
 #### 播放器  (/song)
+<img src="https://raw.githubusercontent.com/lchkid/vue-netease-cloud-music/master/screenshots/song.gif" style="zoom:50%;" />
 
 ##### 记录
 

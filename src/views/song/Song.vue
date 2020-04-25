@@ -4,7 +4,12 @@
     <song-cover :song-img="song.img"></song-cover>
     <song-lyric></song-lyric>
     <song-menu></song-menu>
-    <song-control :song="song"></song-control>
+    <song-control 
+      :song="song" 
+      @nextClick="nextClick"
+      @prevClick="prevClick"
+    ></song-control>
+    <!-- <div class="song-filter"></div> -->
     <div class="song-bg" :style="bgImg"></div>
   </div>
 </template>
@@ -32,9 +37,19 @@ export default {
     SongMenu,
     SongControl
   },
+  methods: {
+    prevClick() {
+      this.$store.commit('decreaseIndex')
+      this.song = new Song(this.$store.getters.getSong(this.$store.state.currentIndex))
+    },
+    nextClick() {
+      this.$store.commit('increaseIndex')
+      this.song = new Song(this.$store.getters.getSong(this.$store.state.currentIndex))
+    }
+  },
   computed: {
     bgImg() {
-      return {backgroundImage: `url(${this.song.img})`};
+      return {background: `url(${this.song.img}) center/300% no-repeat`};
     }
   },
   created() {
@@ -67,17 +82,24 @@ export default {
   flex-direction: column;
 }
 
+/* .song-filter {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: -1;
+} */
+
 .song-bg {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background-position: center;
-  background-size: 1000%;
-  filter: blur(30px);
-  z-index: -1;
-  
-  background-color: grey;
+  filter: blur(20px);
+  z-index: -2;
+  transform: scale(1.2);
 }
 </style>

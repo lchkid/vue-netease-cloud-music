@@ -26,6 +26,24 @@ export default new Vuex.Store({
     },
     updateStatus(state, payload) {
       state.currentStatus = !payload
+    },
+    increaseIndex(state) {
+      if(state.currentIndex < state.playlist.length - 1) {
+        state.currentIndex += 1
+      }else if(state.currentIndex == state.playlist.length - 1) {
+        state.currentIndex = 0
+      }else {
+        return false
+      } 
+    },
+    decreaseIndex(state) {
+      if(state.currentIndex > 0) {
+        state.currentIndex -= 1
+      }else if(state.currentIndex == 0) {
+        state.currentIndex = state.playlist.length - 1
+      }else {
+        return false
+      } 
     }
   },
   getters: {
@@ -33,7 +51,11 @@ export default new Vuex.Store({
       return (index) => {
         return state.playlist[index]
       }
-    }
+    },
+    // getNextSong(state) {
+    //   let i = state.currentIndex + 1
+    //   return state.playlist[i]
+    // }
   },
   modules: {
   }

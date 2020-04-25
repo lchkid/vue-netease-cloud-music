@@ -61,6 +61,9 @@ export default {
 
 .nav-bar-center .snv-title {
   padding-top: 5px;
+  width: calc(100vw - 120px);
+  white-space: nowrap;
+  overflow: hidden;;
 }
 
 .nav-bar-center .snv-artist {

@@ -13,12 +13,13 @@
         ref="audio" :src="songUrl" autoplay
         @canplay="songCanPlay"
         @timeupdate="songTimeUpdate"
+        @ended="songEnded"
       />
     <div class="sc-tab-bar">
-      <span class="iconfont icon-loop"></span>
-      <span class="iconfont icon-prev"></span>
+      <span class="iconfont icon-loop" :class="{active: loop}" @click="loopClick"></span>
+      <span class="iconfont icon-prev" @click="prevClick"></span>
       <span class="iconfont control" :class="isPause" @click="controlClick"></span>
-      <span class="iconfont icon-next"></span>
+      <span class="iconfont icon-next" @click="nextClick"></span>
       <span class="iconfont icon-list"></span>
     </div>
   </div>
@@ -32,7 +33,8 @@ export default {
     return {
       audio: {},
       time: 0.00,
-      pause: false
+      pause: false,
+      loop: false,
     }
   },
   props: {
@@ -50,12 +52,29 @@ export default {
     songTimeUpdate() {
       this.time = this.audio.currentTime * 1000
     },
+    songEnded() {
+      if(this.loop) {
+        this.audio.play()
+      }else {
+        this.$emit('nextClick')
+      }
+    },
+    
 
     // 操作控件
     controlClick() {
       this.pause ? this.audio.play() : this.audio.pause()
       this.pause = !this.pause
       this.$store.commit('updateStatus', this.pause)
+    },
+    loopClick() {
+      this.loop = !this.loop
+    },
+    prevClick() {
+      this.$emit('prevClick')
+    },
+    nextClick() {
+      this.$emit('nextClick')
     }
   },
   computed: {
@@ -133,5 +152,9 @@ export default {
 
 .iconfont.control {
   font-size: 80px;
+}
+
+.iconfont.active {
+  color: #ff203a;
 }
 </style>

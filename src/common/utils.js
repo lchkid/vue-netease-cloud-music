@@ -1,5 +1,9 @@
+export function zero(value) {
+  return value < 10 ? '0' + value : value;
+}
+
 export function timeShift(time) {
-  return (parseInt(time / 60000) + parseInt(time % 60000 / 1000) / 100).toFixed(2)
+  return Math.floor(time / 60000) + ':' + zero(Math.floor(time % 60000 / 1000))
 }
 
 export function timeWidth(time, totalTime) {

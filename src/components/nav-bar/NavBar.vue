@@ -28,6 +28,7 @@ export default {};
 
 .nav-bar-left,
 .nav-bar-right {
+  flex-shrink: 0;
   width: 60px;
 }
 

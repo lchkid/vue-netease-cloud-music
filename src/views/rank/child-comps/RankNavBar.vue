@@ -1,13 +1,13 @@
 <template>
-  <div class="home-nav-bar">
+  <div class="rank-nav-bar">
     <nav-bar>
       <template #left>
-        <img src="@/assets/img/home/nav-bar/song.svg" alt />
+        <img src="@/assets/img/rank/back.svg" @click="backClick" alt />
       </template>
       <template #center>
-        <input type="text" />
+        <span>排行榜</span>
       </template>
-      <template #right >
+      <template #right>
         <img src="@/assets/img/common/cd.svg" alt />
       </template>
     </nav-bar>
@@ -20,6 +20,11 @@ import NavBar from "@/components/nav-bar/NavBar";
 export default {
   components: {
     NavBar
+  },
+  methods: {
+    backClick() {
+      this.$router.back()
+    }
   }
 };
 </script>
@@ -29,13 +34,8 @@ export default {
   background-color: #fff;
 }
 
-.nav-bar input[type="text"] {
-  outline: none;
-  background-color: #f7f7f7;
-  border: 0 solid #f7f7f7;
-  border-radius: 19px;
-  height: 38px;
-  width: 100%;
-  padding: 0 30px;
+.nav-bar-center span{
+  color: #000000;
+  font-weight: bold;
 }
 </style>

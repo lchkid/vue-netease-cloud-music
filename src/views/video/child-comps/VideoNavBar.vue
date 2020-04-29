@@ -8,7 +8,7 @@
         <input type="text" />
       </template>
       <template #right>
-        <img src="@/assets/img/video/nav-bar/cd.svg" alt />
+        <img src="@/assets/img/common/cd.svg" alt />
       </template>
     </nav-bar>
   </div>

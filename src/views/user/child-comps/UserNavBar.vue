@@ -5,7 +5,7 @@
         <img src="@/assets/img/playlist/nav-bar/back.svg" alt />
       </template>
       <template #right>
-        <img src="@/assets/img/playlist/nav-bar/cd.svg" alt />
+        <img src="@/assets/img/common/cd.svg" alt />
       </template>
     </nav-bar>
   </div>

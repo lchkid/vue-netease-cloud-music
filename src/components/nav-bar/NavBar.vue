@@ -6,14 +6,26 @@
     <div class="nav-bar-center">
       <slot name="center"></slot>
     </div>
-    <div class="nav-bar-right">
+    <div class="nav-bar-right" @click="songClick">
       <slot name="right"></slot>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    songClick() {
+      let id = this.$store.state.song.id
+      this.$router.push({
+        path: '/song',
+        query: {
+          id
+        }
+      })
+    }
+  }
+};
 </script>
 
 <style>

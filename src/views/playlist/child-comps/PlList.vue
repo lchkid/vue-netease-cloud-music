@@ -1,7 +1,7 @@
 <template>
   <div class="pl-list">
     <div class="pl-control">
-      <div>
+      <div @click="allClick">
         <img src="@/assets/img/playlist/play.svg" alt />
         <span class="play">播放全部</span>
         <span>(共{{count.track}}首)</span>
@@ -43,6 +43,11 @@ export default {
         }
       })
       this.$store.commit('updateIndex', index)
+    },
+    allClick() {
+      let index = 0
+      let id = this.tracks[index].id
+      this.songClick(id, index)
     }
   },
   filters: {

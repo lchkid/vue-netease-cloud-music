@@ -9,7 +9,7 @@
         <p class="snv-artist">{{showName}}</p>
       </template>
       <template #right>
-        <img src="@/assets/img/song/nav-bar/share.svg" alt />
+        <img src="@/assets/img/song/nav-bar/share.svg" @click.stop="shareClick" alt />
       </template>
     </nav-bar>
   </div>
@@ -36,6 +36,9 @@ export default {
     backClick() {
       this.$router.back();
       this.$store.commit("updateStatus", false);
+    },
+    shareClick() {
+      console.log('share')
     }
   },
   computed: {

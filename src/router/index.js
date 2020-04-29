@@ -10,6 +10,7 @@ const Comment = () => import('@/views/comment/Comment')
 const User = () => import('@/views/user/User')
 const PlayList = () => import('@/views/playlist/PlayList')
 const Song = () => import('@/views/song/Song')
+const Rank = () => import('@/views/rank/Rank')
 
 
 const routes = [
@@ -46,6 +47,11 @@ const routes = [
     path: '/song',
     name: 'song',
     component: Song
+  },
+  {
+    path: '/rank',
+    name: 'rank',
+    component: Rank
   },
 ]
 

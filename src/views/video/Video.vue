@@ -1,9 +1,9 @@
 <template>
   <div id="video">
     <video-nav-bar></video-nav-bar>
+    <video-tab :tab-list="tabList" @tabClick="tabClick"></video-tab>
     <better-scroll class="video-wrapper">
       <div class="video-content">
-        <video-tab :tab-list="tabList" @tabClick="tabClick"></video-tab>
         <video-group :video-list="videoList"></video-group>
       </div>
     </better-scroll>
@@ -56,7 +56,7 @@ export default {
 .video-wrapper {
   width: 100%;
   position: absolute;
-  top: 44px;
+  top: 74px;
   left: 0;
   right: 0;
   bottom: 49px;

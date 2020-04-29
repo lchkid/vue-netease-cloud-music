@@ -1,6 +1,6 @@
 import originAxios from 'axios'
 
-export function axios(config) {
+export default function axios(config) {
   const instance = originAxios.create({
     baseURL: 'http://localhost:3000/',
     timeout: 5000,

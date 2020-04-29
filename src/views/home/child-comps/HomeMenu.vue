@@ -17,7 +17,7 @@
           歌单
         </template>
       </menu-item>
-      <menu-item>
+      <menu-item @click.native="rankClick">
         <template #icon>
           <img src="@/assets/img/home/menu/rank.svg" alt="">
         </template>
@@ -53,6 +53,13 @@ export default {
   components: {
     MenuList,
     MenuItem
+  },
+  methods: {
+    rankClick() {
+      this.$router.push({
+        path: '/rank'
+      })
+    }
   }
 }
 </script>

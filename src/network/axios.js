@@ -2,8 +2,9 @@ import originAxios from 'axios'
 
 export default function axios(config) {
   const instance = originAxios.create({
-    baseURL: 'http://localhost:3000/',
-    timeout: 5000,
+    // baseURL: 'https://lchkid.top:3333/',
+    baseURL: 'http://localhost:3332/',
+    timeout: 10000,
     withCredentials: true
   })
   instance.interceptors.request.use(config => {

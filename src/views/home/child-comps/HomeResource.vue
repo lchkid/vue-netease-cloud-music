@@ -1,7 +1,7 @@
 <template>
   <div class="home-recommend">
     <div class="recommend-top">
-      <div class="rt-title">不可错过的场景推荐</div>
+      <div class="rt-title">不可错过的场景推荐(需要登录)</div>
       <button class="rt-more">查看更多</button>
     </div>
     <recommend :playlist="resource"></recommend>

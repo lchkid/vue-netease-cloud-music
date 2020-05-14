@@ -1,3 +1,3 @@
-// module.exports = {
-//   publicPath: '/demo/vuemusic'
-// }
+module.exports = {
+  publicPath: '/demo/vuemusic'
+}
